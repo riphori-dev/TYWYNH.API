@@ -19,6 +19,7 @@ namespace Tywynh.Features
             services.AddScoped<AppMediator>();
             services.AddScoped<IRequestHandler<PostStoryCommand, int>, PostStoryHandler>();
             services.AddScoped<IRequestHandler<GetStoryCommand, List<Story>>, GetStoryHandler>();
+            services.AddScoped<IRequestHandler<GetRandomStoriesCommand, List<Story>>, GetRandomStoriesHandler>();
 
             return services;
         }

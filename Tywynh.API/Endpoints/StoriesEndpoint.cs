@@ -35,6 +35,16 @@ namespace Tywynh.API.Endpoints
             })
             .WithName("GetStoriesAsync")
             .WithOpenApi();
+
+            app.MapGet("/api/stories/random", async (
+                AppMediator mediator) =>
+            {
+                var command = new GetRandomStoriesCommand();
+                var stories = await mediator.SendAsync(command);
+                return Results.Ok(stories);
+            })
+            .WithName("GetRandomStoriesAsync")
+            .WithOpenApi();
         }
     }
 }

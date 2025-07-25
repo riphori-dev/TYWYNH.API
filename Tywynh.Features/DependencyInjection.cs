@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tywynh.Domain.Models;
+using Tywynh.Features.Category;
 using Tywynh.Features.Common;
 using Tywynh.Features.GetStory;
 using Tywynh.Features.PostStory;
@@ -20,6 +21,8 @@ namespace Tywynh.Features
             services.AddScoped<IRequestHandler<PostStoryCommand, int>, PostStoryHandler>();
             services.AddScoped<IRequestHandler<GetStoryCommand, List<Story>>, GetStoryHandler>();
             services.AddScoped<IRequestHandler<GetRandomStoriesCommand, List<Story>>, GetRandomStoriesHandler>();
+            services.AddScoped<IRequestHandler<CreateCategoryCommand, int>, CreateCategoryHandler>();
+            services.AddScoped<IRequestHandler<GetCategoriesQuery, List<Domain.Models.Category>>, GetCategoriesHandler>();
 
             return services;
         }

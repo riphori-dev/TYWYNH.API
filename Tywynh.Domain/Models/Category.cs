@@ -19,15 +19,12 @@ namespace Tywynh.Domain.Models
 
         private Category() { } // For EF Core or serialization
 
-        public Category(string name, string description)
+        public Category(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Category name cannot be empty.", nameof(name));
-            if (string.IsNullOrWhiteSpace(description))
-                throw new ArgumentException("Category description cannot be empty.", nameof(description));
 
             Name = name;
-            Description = description;
         }
     }
 }

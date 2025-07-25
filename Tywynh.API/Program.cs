@@ -46,4 +46,5 @@ app.UseCors("AllowFrontend");
 
 app.UseHttpsRedirection();
 app.MapStoriesEndpoints();
+app.MapCategoryEndpoints();
 app.Run();

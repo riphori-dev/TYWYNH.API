@@ -22,6 +22,7 @@ namespace Tywynh.Infrastracture
             services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(connectionString));
             services.AddScoped<IStoryRepository, StoryRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
             return services;
         }
     }

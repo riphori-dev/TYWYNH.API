@@ -37,7 +37,6 @@ namespace Tywynh.Infrastracture.Repositories
             try
             {
                 return await _context.Stories
-                    .Include(s => s.Category)
                     .FirstOrDefaultAsync(s => s.Id == id);
             }
             catch (Exception ex)
@@ -50,6 +49,12 @@ namespace Tywynh.Infrastracture.Repositories
         public async Task SaveAsync(Story story)
         {
              _context.Stories.Add(story);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(Story story)
+        {
+            _context.Stories.Update(story);
             await _context.SaveChangesAsync();
         }
     }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting.Server;
 using Tywynh.Features.Common;
 using Tywynh.Features.GetStory;
 using Tywynh.Features.PostStory;
+using Tywynh.Features.StoryHeart;
 
 namespace Tywynh.API.Endpoints
 {
@@ -44,6 +45,17 @@ namespace Tywynh.API.Endpoints
                 return Results.Ok(stories);
             })
             .WithName("GetRandomStoriesAsync")
+            .WithOpenApi();
+
+            app.MapPost("/api/stories/{id}/heart", async (
+                int id,
+                AppMediator mediator) =>
+            {
+                var command = new AddHeartCommand(id);
+                var result = await mediator.SendAsync(command);
+                return result ? Results.Ok() : Results.NotFound();
+            })
+            .WithName("AddHeartToStory")
             .WithOpenApi();
         }
     }

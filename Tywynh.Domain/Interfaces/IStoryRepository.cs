@@ -12,5 +12,6 @@ namespace Tywynh.Domain.Interfaces
         Task<Story?> GetByIdAsync(int id);
         Task SaveAsync(Story story);
         Task<List<Story>> GetAllStories();
+        Task UpdateAsync(Story story);
     }
 }

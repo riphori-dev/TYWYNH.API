@@ -10,5 +10,6 @@ namespace Tywynh.Domain.Interfaces
         Task<Category?> GetByIdAsync(int id);
         Task<List<Category>> GetAllAsync();
         Task<Category> AddAsync(Category category);
+
     }
 }

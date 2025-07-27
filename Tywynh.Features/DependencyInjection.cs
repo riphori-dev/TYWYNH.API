@@ -23,7 +23,7 @@ namespace Tywynh.Features
             services.AddScoped<IRequestHandler<GetStoryCommand, List<Story>>, GetStoryHandler>();
             services.AddScoped<IRequestHandler<GetRandomStoriesCommand, List<Story>>, GetRandomStoriesHandler>();
             services.AddScoped<IRequestHandler<CreateCategoryCommand, int>, CreateCategoryHandler>();
-            services.AddScoped<IRequestHandler<GetCategoriesQuery, List<Domain.Models.Category>>, GetCategoriesHandler>();
+            services.AddScoped<IRequestHandler<GetCategoriesQuery, List<CategoryDto>>, GetCategoriesHandler>();
             services.AddScoped<IRequestHandler<AddHeartCommand, bool>, AddHeartHandler>();
 
             return services;

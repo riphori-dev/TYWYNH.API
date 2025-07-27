@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Tywynh.Infrastracture\Tywynh.Infrastracture.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO\" />
+  </ItemGroup>
+
 </Project>

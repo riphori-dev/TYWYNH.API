@@ -35,6 +35,8 @@ var app = builder.Build();
 // Add this line before other middlewares
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
+app.UseMiddleware<RequestLoggingMiddleware>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -47,4 +49,6 @@ app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
 app.MapStoriesEndpoints();
 app.MapCategoryEndpoints();
+app.MapLogEndpoints();
+app.MapThoughtEndpoint();
 app.Run();

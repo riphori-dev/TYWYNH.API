@@ -10,6 +10,7 @@ using Tywynh.Features.Common;
 using Tywynh.Features.GetStory;
 using Tywynh.Features.PostStory;
 using Tywynh.Features.StoryHeart;
+using Tywynh.Features.UpliftingThought;
 
 namespace Tywynh.Features
 {
@@ -25,6 +26,7 @@ namespace Tywynh.Features
             services.AddScoped<IRequestHandler<CreateCategoryCommand, int>, CreateCategoryHandler>();
             services.AddScoped<IRequestHandler<GetCategoriesQuery, List<CategoryDto>>, GetCategoriesHandler>();
             services.AddScoped<IRequestHandler<AddHeartCommand, bool>, AddHeartHandler>();
+            services.AddScoped<IRequestHandler<UplifingThoughtCommand, string>, UpliftingThoughtHandler>();
 
             return services;
         }

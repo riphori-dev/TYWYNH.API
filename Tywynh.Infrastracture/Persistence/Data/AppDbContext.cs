@@ -15,5 +15,6 @@ namespace Tywynh.Infrastracture.Persistence.Data
 
             public DbSet<Category> Categories { get; set; }
 
+            public DbSet<RequestLog> RequestLogs { get; set; }
     }
 }

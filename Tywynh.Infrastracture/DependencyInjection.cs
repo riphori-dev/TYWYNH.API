@@ -23,6 +23,8 @@ namespace Tywynh.Infrastracture
                 options.UseNpgsql(connectionString));
             services.AddScoped<IStoryRepository, StoryRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ILogRepository, LogRepository>();
+            services.AddScoped<IUpliftingThoughtService, ThoughtService>();
             return services;
         }
     }

@@ -30,7 +30,7 @@ public class ThoughtService : IUpliftingThoughtService
             model = "meta-llama/llama-3-8b-instruct",
             messages = new[]
             {
-                new { role = "system", content = "You are an uplifting assistant who always responds with positive and encouraging thoughts." },
+                new { role = "system", content = "You are an uplifting assistant who always responds with positive and encouraging thoughts. But keep it short, please." },
                 new { role = "user", content = userMessage }
             },
             max_tokens = 150,

@@ -19,10 +19,29 @@ A layered .NET 8 Web API for managing stories, following clean architecture prin
 
 ## Endpoints
 
-| Method | Route           | Description         |
-|--------|-----------------|---------------------|
-| POST   | `/api/stories`  | Create a new story  |
-| GET    | `/api/stories`  | Get all stories     |
+### Stories
+| Method | Route                    | Description                    |
+|--------|--------------------------|--------------------------------|
+| POST   | `/api/stories`           | Create a new story             |
+| GET    | `/api/stories`           | Get all stories                |
+| GET    | `/api/stories/random`    | Get random stories             |
+| POST   | `/api/stories/{id}/heart`| Add a heart to a story         |
+
+### Categories
+| Method | Route              | Description           |
+|--------|-------------------|----------------------|
+| POST   | `/api/categories`  | Create a new category |
+| GET    | `/api/categories`  | Get all categories    |
+
+### Thoughts
+| Method | Route         | Description                    |
+|--------|---------------|--------------------------------|
+| GET    | `/api/thoughts`| Get uplifting thoughts (with query parameter) |
+
+### Logs
+| Method | Route      | Description           |
+|--------|------------|----------------------|
+| GET    | `/api/logs`| Get all request logs  |
 
 ## Getting Started
 
